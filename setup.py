@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 
-setup(name="resample_streamq", version="0.1", 
+setup(name="topnet-resampling", version="0.1", 
       description="Script to resample TopNet streamq time-series",
       long_description=readme(),
       long_description_content_type='text/x-rst',
