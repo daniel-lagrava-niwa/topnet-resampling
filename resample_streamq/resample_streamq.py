@@ -9,9 +9,12 @@ suffix_output = {'1D': 'Daily', '1M': 'Monthly', '7D': "Weekly"}
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("input_nc", type=str)
-    parser.add_argument("--resampling_interval", choices=["1D","1M", "7D"], default="1D")
-    parser.add_argument("--variables", nargs="+", default=["river_flow_rate_mod", "aprecip"])
+    parser.add_argument("input_nc", type=str, help="Input file (TopNet streamq file)")
+    parser.add_argument("--resampling_interval", choices=["1D","1M", "7D"], default="1D", 
+                        help="Choose the resampling interval: 1D (daily), 1M (monthly) or 7D (weekly)")
+    parser.add_argument("--variables", nargs="+", default=["river_flow_rate_mod", "aprecip"],
+                        help="Space separated list of the variables to resample. Currently accepting "
+                                 + ", ".join(all_variables_for_sum + all_variables_for_mean))
     return parser.parse_args()
 
 

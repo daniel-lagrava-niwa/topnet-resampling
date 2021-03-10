@@ -20,7 +20,7 @@ setup(name="topnet-resampling", version="0.1",
             'resample_streamq=resample_streamq.resample_streamq:main'
         ],
       },
-      install_requires=['numpy','netCDF4','xarray'],
+      install_requires=['netCDF4','xarray'],
       include_package_data=True,
       zip_safe=False
 )
