@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 
-setup(name="topnet-resampling", version="0.1", 
+setup(name="topnet-resampling", version="0.2",
       description="Script to resample TopNet streamq time-series",
       long_description=readme(),
       long_description_content_type='text/x-rst',
@@ -17,7 +17,9 @@ setup(name="topnet-resampling", version="0.1",
       scripts=['bin/fix_streamq.sh'],
       entry_points={
         'console_scripts': [
-            'resample_streamq=resample_streamq.resample_streamq:main'
+            'resample_streamq=resample_streamq.resample_streamq:main',
+            'resample_tseries=resample_streamq.resample_tseries:main',
+            'streamq_statistics=resample_streamq.streamq_statistics:main'
         ],
       },
       install_requires=['netCDF4','xarray'],
